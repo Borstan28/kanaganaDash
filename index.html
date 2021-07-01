@@ -1,0 +1,29 @@
+<!DOCTYPE html> 
+
+<head>
+    <meta charset="utf-8">
+    <link rel='stylesheet' href='style.css'>
+</head>
+
+<body>
+    <div class='start' onclick='setTimer()'>▶</div>
+    <div class='modalGameOver'>
+        <div class='modal'>
+            <div class='modalGOtext'> Game over. Let's try again...</div>
+            <div class='modalButtons'>
+                <div class='replay' onclick="replayButton()">🔁</div>
+                <div class='exit'></div>
+            </div>
+        </div>
+    </div>
+    <div class='header'>●Hiragana Dash●</div>
+    <div class='question'>Press Start</div>
+    <div class='container'></div>
+    <div class='footer'>
+        <div class='timer' style='width: 300px;'></div>
+        <div class='points'>0</div>
+
+    </div>
+
+<script src='script.js'></script>
+</body> 
