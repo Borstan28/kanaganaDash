@@ -539,6 +539,7 @@ let cardsArray = [];
 let pointsDiv = document.querySelector('.points');
 let points = 0;
 let startButton = document.querySelector('.start');
+let footer = document.querySelector('.footer');
 
 function updatePoints(points){
   pointsDiv.innerHTML = points;
@@ -553,6 +554,7 @@ function setTimer(){
     if(onTimer==false){
         generateCards();
         chooseQuestion();
+        footer.style.visibility = 'visible';
         startButton.style.visibility = 'hidden';
         onTimer = true;
         a = setInterval(()=>{
@@ -560,6 +562,7 @@ function setTimer(){
             console.log(currentTimer)
             if(currentTimer<=0){
                 clearInterval(a);
+                footer.style.visibility = 'hidden';
                 cardsArray = [];
                 timer.style.width = '300px';
                 onTimer = false;
@@ -571,13 +574,12 @@ function setTimer(){
               alert('you won');
               clearInterval(a);
               timer.style.width = '300px';
+              questionDiv.innerHTML = 'Press Start'
+              footer.style.visibility = 'hidden';
               currentTimer = parseInt(timer.style.width);
               onTimer = false;
               cont.innerHTML = '';
-              setTimeout(()=>{
-                generateCards();
-                chooseQuestion();
-              }, 100);
+              startButton.style.visibility = 'visible';
             }
         },100)
     } else if(onTimer==true){
